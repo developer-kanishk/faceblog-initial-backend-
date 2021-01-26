@@ -120,6 +120,15 @@ input[type="date"] {
     </div>
   </div>
   <div class="row">
+    <div class="col-25">
+      <label for="imageurl">image url</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="imageurl" name="imageurl" placeholder="image url" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" >
+    </div>
+  </div>
+  <br>
+  <div class="row">
     <input type="submit" value="Submit" id='submitButt'>
   </div>
   </form>
@@ -128,10 +137,7 @@ input[type="date"] {
 </body>
 <!-- embedded js code authored @ kanishk -->
 <script>
-  let submitButton = document.getElementById('submitButt');
-  submitButton.addEventListener("click",()=>{
-      alert('Do you really wanna submit');
-  });
+
 </script>
 
 </html>
