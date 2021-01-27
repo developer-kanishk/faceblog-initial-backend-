@@ -157,7 +157,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h2>Welcome To FaceBlog</h2>
           <p>Publish Your Experiences.It's free and easy to use</p>
-          <button type="button" class="btn btn-warning">Create Your Blog</button>
+          <button type="button" class="btn btn-warning" id='create' >Create Your Blog</button>
         </div>
       </div>
       <div class="carousel-item">
@@ -165,7 +165,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h2>Welcome To FaceBlog</h2>
           <p>Publish Your Experiences.It's free and easy to use</p>
-          <button type="button" class="btn btn-warning">Create Your Blog</button>
+          <button type="button" class="btn btn-warning" id='create' >Create Your Blog</button>
         </div>
       </div>
       <div class="carousel-item">
@@ -173,7 +173,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h2>Welcome To FaceBlog</h2>
           <p>Publish Your Experiences.It's free and easy to use</p>
-          <button type="button" class="btn btn-warning">Create Your Blog</button>
+          <button type="button" class="btn btn-warning" id='create' >Create Your Blog</button>
         </div>
       </div>
     </div>
@@ -268,5 +268,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
 </body>
+<script>
+  let createBlog = document.getElementById('create');
+  createBlog.addEventListener("click" , ()=>{
+    window.location.href="http://localhost/admin";
+  });
+</script>
 
 </html>
