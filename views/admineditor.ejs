@@ -90,13 +90,13 @@ input[type="date"] {
   </header>
 
 <div class="container">
-  <form action="/action_page.php">
+  <form action="/admin/admineditor" method="POST">
     <div class="row">
         <div class="col-25">
           <label for="date">Date</label>
         </div>
         <div class="col-75">
-          <input type="date" id="date" name="date" placeholder="date">
+          <input type="date" id="date" name="dates" placeholder="date">
         </div>
       </div>
   <div class="row">
@@ -104,7 +104,7 @@ input[type="date"] {
       <label for="fname">Your Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="fname" name="firstname" placeholder="Your name.." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" >
+      <input type="text" id="fname" name="name" placeholder="Your name.." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" >
     </div>
   </div>
   <div class="row">
@@ -112,7 +112,7 @@ input[type="date"] {
       <label for="lname">Title</label>
     </div>
     <div class="col-75">
-      <input type="text" id="lname" name="lastname" placeholder="Title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="text" id="lname" name="title" placeholder="Title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     </div>
   </div>
   <div class="row">
@@ -120,7 +120,7 @@ input[type="date"] {
       <label for="subject">Subject</label>
     </div>
     <div class="col-75">
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:400px" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      <textarea id="subject" name="body" placeholder="Write something.." style="height:400px" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
     </div>
   </div>
   <div class="row">
