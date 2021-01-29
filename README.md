@@ -1,6 +1,7 @@
-# faceblog-initial-backend-
-//author@kanishk
-//views - standard template engine folder
-// public - static folder
-// server.js - entry point
+
+
+================================================
+1. create blog feature added (testing)
+2. database setup
+===============================================
 
