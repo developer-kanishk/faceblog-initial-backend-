@@ -12,11 +12,12 @@ router.get('/admineditor',(req,res)=>{
 });
 
 router.post('/admineditor',(req,res)=>{
-    let dates = req.body.date;
+    let dates = req.body.dates;
     let name = req.body.name;
     let title = req.body.title;
     let body = req.body.body;
     let imgurl = req.body.imageurl;
+    console.log(typeof dates);
     let blogPost = new blog({
         title:title ,
         body:body,

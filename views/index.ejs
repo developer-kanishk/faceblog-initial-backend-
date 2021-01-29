@@ -16,10 +16,18 @@
     .container{
             background-color: black;
             border: 2px solid red;
-            width: 80%;
+            width: 95%;
             margin: 10px auto;
             padding: 5px;
             color: white;
+        }
+      .image{
+            margin-bottom: 5px;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         .title{
             text-align: center;
@@ -30,10 +38,13 @@
             color: cornsilk;
             margin: 2px 2px;
         }
+         .color{
+            background-color: #469dfa;
+        }
   </style>
 </head>
 
-<body>
+<body class="color">
   <header>
     <%- include('./partials/header'); %>
   </header>
@@ -84,25 +95,22 @@
 
 
 <!-- ==================================== -->
-    <div class="container" id="contain1">
+<% blogs.forEach(function(blog) { %>
+      <div class="container" id="contain1">
         <div class="container1">
-          Published By Author on <span>date</span>
+          Published By <%=blog.name%> on <span><%=blog.dates%></span>
         </div>
         <div class="title">
-            <h2>Title</h2>
+            <h2><%=blog.title%></h2>
         </div>
         <div class="image">
-            <img src="/images/macbook.jpg" alt="" height="300" width="500">
-        </div>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, facere! Architecto, itaque fugiat eum optio, obcaecati atque commodi odit dolore totam ex, tempora eligendi. Obcaecati, enim? Eaque asperiores laudantium earum.
-        Ipsam eos mollitia voluptatibus esse sed beatae? Temporibus eius, quos, aperiam hic, numquam rerum tempore sed cum nam rem consequuntur perspiciatis quaerat ab esse in voluptates quod odit debitis voluptatum!
-        Qui amet nulla mollitia temporibus est repellendus sapiente, deleniti, quis reprehenderit voluptates maxime cumque, dolores ab tenetur harum! Labore cupiditate nam ducimus non voluptate quis explicabo quisquam quibusdam, cum autem!
-        
-        <div>
+            <img src=<%=blog.imgurl%> alt="" height="300" width="500">
+        </div> <%=blog.body%> <div>
             <button class="btn">Edit</button>
         <button class="btn">Delete</button>
         </div>
     </div>
+    <% }); %>
 
 
 
