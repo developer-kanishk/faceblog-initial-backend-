@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FaceBlog-Heaven For Bloggers">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <title>FaceBlog-Heaven for bloggers!</title>
+  <style>
+    .container{
+            background-color: #fcd1d1;
+            border: 2px solid #ffb4b4;
+            border-radius: 10px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 5px;
+            color: black;
+        }
+      .image{
+            margin-bottom: 5px;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .title{
+            text-align: center;
+        }
+        .btn{
+            cursor: pointer;
+            background-color: darkred;
+            color: cornsilk;
+            margin: 2px 2px;
+        }
+         .color{
+            background-color: #ffffff;
+        }
+        .myimg{
+          border-radius: 100%;
+          border: 2px solid white;
+        }
+  </style>
+</head>
+
+<body>
+      <header>
+        <%- include('./partials/header'); %>
+      </header>
+        <div class="container" id="contain1">
+          <div class="container1" style="text-align: center">
+            Published By <%=name%> on <span><%=dates%></span>
+          </div>
+          <div class="title" style="margin: 10px;" >
+              <h2><%=title%></h2>
+          </div>
+          <div class="image" style=" height:300px; width: 500px; margin: auto; border:2px soild black;">
+              <img src=<%=imgurl%> alt="" height="300" width="500" class="myimg">
+          </div> 
+          <div style="margin-top: 20px;">
+            <%=body%>  
+          </div>
+          <!-- <button class="btn">Edit</button> -->
+          <!-- <button class="btn">Delete</button> -->
+        </div>
+    <%- include('./partials/footer'); %>
+</body>

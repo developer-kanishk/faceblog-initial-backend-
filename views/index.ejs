@@ -14,12 +14,13 @@
   <title>FaceBlog-Heaven for bloggers!</title>
   <style>
     .container{
-            background-color: black;
-            border: 2px solid red;
-            width: 95%;
-            margin: 10px auto;
+            background-color: #fcd1d1;
+            border: 2px solid #ffb4b4;
+            border-radius: 10px;
+            width: 100%;
+            margin: 40px auto;
             padding: 5px;
-            color: white;
+            color: black;
         }
       .image{
             margin-bottom: 5px;
@@ -39,7 +40,11 @@
             margin: 2px 2px;
         }
          .color{
-            background-color: #469dfa;
+            background-color: #ffffff;
+        }
+        .myimg{
+          border-radius: 100%;
+          border: 2px solid white;
         }
   </style>
 </head>
@@ -48,7 +53,7 @@
   <header>
     <%- include('./partials/header'); %>
   </header>
-  <!-- carousel code -->
+  <!-- carousel code
 
   <div id="carouselExampleCaptions" class="carousel slide carousel-fade"    data-bs-ride="carousel">
     <ol class="carousel-indicators">
@@ -92,38 +97,35 @@
     </a>
   </div>
   
-
+ -->
 
 <!-- ==================================== -->
 <% blogs.forEach(function(blog) { %>
       <div class="container" id="contain1">
-        <div class="container1">
-          Published By <%=blog.name%> on <span><%=blog.dates%></span>
+        <div class="container1" style="text-align: center">
+          Published By <%=blog.name%> on <span> <%=blog.dates%> </span>
         </div>
-        <div class="title">
-            <h2><%=blog.title%></h2>
+        <div class="title" style="margin: 10px;" id= <%= blog.id %> >
+          <%let add = '/getone/' + blog.id %>  
+          <h2> <a href=<%= add %>> <%=blog.title%> </a></h2>
         </div>
-        <div class="image">
-            <img src=<%=blog.imgurl%> alt="" height="300" width="500">
-        </div> <%=blog.body%> <div>
-            <button class="btn">Edit</button>
-        <button class="btn">Delete</button>
+        <div class="image" style=" height:300px; width: 500px; margin: auto; border:2px soild black;">
+            <img src=<%=blog.imgurl%> alt="" height="300" width="500" class="myimg">
+        </div> 
+        <div style="margin-top: 20px;">
+          <%=blog.body%>  
         </div>
-    </div>
+            <!-- <button class="btn">Edit</button> -->
+        <!-- <button class="btn">Delete</button> -->
+      </div>
     <% }); %>
-
-
-
- 
-
   <%- include('./partials/footer'); %>
-  
 </body>
-<script>
+<!-- <script>
   let createBlog = document.getElementById('create');
   createBlog.addEventListener("click" , ()=>{
     window.location.href="http://localhost/admin";
   });
-</script>
+</script> -->
 
 </html>

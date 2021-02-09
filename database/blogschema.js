@@ -1,7 +1,4 @@
-//ram bhakt Hanuman ko pranam 
-
 const mongoose = require('mongoose');
-
 //defining schema for basic blog structure
 const blogSchema = new mongoose.Schema({
     title:String,

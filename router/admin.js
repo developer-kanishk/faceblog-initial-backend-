@@ -1,3 +1,4 @@
+
 const express = require('express');
 const { reset } = require('nodemon');
 const blog = require('../database/blogschema');
@@ -17,7 +18,6 @@ router.post('/admineditor',(req,res)=>{
     let title = req.body.title;
     let body = req.body.body;
     let imgurl = req.body.imageurl;
-    console.log(typeof dates);
     let blogPost = new blog({
         title:title ,
         body:body,
@@ -30,8 +30,8 @@ router.post('/admineditor',(req,res)=>{
         res.send('<h2>successful</h2>');
       })
       .catch(err => {
+        console.error(err);
         res.send('<h2>unsuccessful</h2>');
-        console.error(err)
       }); 
 })
 
