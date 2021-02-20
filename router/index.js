@@ -29,6 +29,10 @@ router.get('/getOne/:uid',(req,res)=>{
         })
     })
 })
+router.delete('/:id', (req, res) => {
+     blog.findByIdAndDelete(req.params.id)
+    res.redirect('/')
+  })
 module.exports = router;
 
 
