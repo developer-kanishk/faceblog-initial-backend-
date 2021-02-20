@@ -117,6 +117,9 @@
         </div>
             <!-- <button class="btn">Edit</button> -->
         <!-- <button class="btn">Delete</button> -->
+        <form action="/index/<%= blog.id %>?_method=DELETE" method="POST" class="d-inline">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
       </div>
     <% }); %>
   <%- include('./partials/footer'); %>
