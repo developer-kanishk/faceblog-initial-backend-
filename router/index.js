@@ -29,9 +29,14 @@ router.get('/getOne/:uid',(req,res)=>{
         })
     })
 })
-router.delete('/:id', (req, res) => {
-     blog.findByIdAndDelete(req.params.id)
-    res.redirect('/')
+router.get("/delete/:id", (req, res) => {
+    const { id } = req.params;
+    blog.deleteOne({ _id: id })
+      .then(() => {
+        console.log("Deleted blog successfully!");
+        res.redirect("/");
+      })
+      .catch((err) => console.log(err));
   })
 module.exports = router;
 
