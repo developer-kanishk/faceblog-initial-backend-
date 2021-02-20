@@ -8,6 +8,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const methodOverride = require('method-override');
 const app = express();
 //modules
 const index=require('./router/index');
@@ -22,6 +23,7 @@ connect();
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded());
 app.set('view engine','ejs');
+app.use(methodOverride('_method'))
 //routing middleware
 app.use('/',index);
 app.use('/contact',contact);
