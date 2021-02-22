@@ -49,6 +49,25 @@ router.get("/delete/:id", (req, res) => {
       })
       .catch((err) => console.log(err));
   })
+
+ router.get("/edit/:id", async (req, res) => {
+    const { id } = req.params;
+
+    const getData = await blog.findOne({ _id: id });
+    res.render("editblog", { Blog: getData });
+  })
+
+  router.post("/edit/:id", (req, res) => {
+    const { id } = req.params;
+    const { dates , name , title , body , imageurl } = req.body;
+
+    blog.updateOne({ _id: id }, { dates , name , title , body , imageurl })
+      .then(() => {
+        console.log("successfully! updated the blog!");
+        res.redirect("/");
+      })
+      .catch((err) => console.log(err));
+  });
 module.exports = router;
 
 
