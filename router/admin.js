@@ -27,7 +27,7 @@ router.post('/admineditor',(req,res)=>{
     });
     blogPost.save()
     .then(() => {
-        res.send('<h2>successful</h2>');
+        res.redirect('/');
       })
       .catch(err => {
         console.error(err);

@@ -45,7 +45,7 @@ router.get("/delete/:id", (req, res) => {
     blog.deleteOne({ _id: pid })
       .then(() => {
         console.log("Deleted blog successfully!");
-        res.redirect("/");
+        res.redirect("/del");
       })
       .catch((err) => console.log(err));
   })
@@ -64,7 +64,7 @@ router.get("/delete/:id", (req, res) => {
     blog.updateOne({ _id: id }, { dates , name , title , body , imageurl })
       .then(() => {
         console.log("successfully! updated the blog!");
-        res.redirect("/");
+        res.redirect("/del");
       })
       .catch((err) => console.log(err));
   });
