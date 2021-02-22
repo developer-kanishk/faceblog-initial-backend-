@@ -30,8 +30,8 @@ router.get('/getOne/:uid',(req,res)=>{
     })
 })
 router.get("/delete/:id", (req, res) => {
-    const { id } = req.params;
-    blog.deleteOne({ _id: id })
+    let pid = mongoose.Types.ObjectId(req.params.id);
+    blog.deleteOne({ _id: pid })
       .then(() => {
         console.log("Deleted blog successfully!");
         res.redirect("/");
