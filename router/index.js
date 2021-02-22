@@ -15,6 +15,17 @@ router.get('/',(req,res)=>{
         }
     });
 });
+router.get('/del',(req,res)=>{
+    blog.find(function(err,blog){
+        if(err) {
+            console.log(err);
+            res.send('<h1>404</h1>');
+        }
+        else{
+            res.render('del',{blogs:blog});
+        }
+    });
+})
 router.get('/getOne/:uid',(req,res)=>{
     //parsing the string to mongoose object
     let id = mongoose.Types.ObjectId(req.params.uid);
