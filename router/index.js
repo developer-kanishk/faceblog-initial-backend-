@@ -1,3 +1,4 @@
+const https = require('https');
 const express = require('express');
 const { reset } = require('nodemon');
 const mongoose = require('mongoose');
@@ -68,6 +69,27 @@ router.get("/delete/:id", (req, res) => {
       })
       .catch((err) => console.log(err));
   });
+  //new api calling 
+  router.get('/news',(req,res)=>{
+    const url='https://newsapi.org/v2/top-headlines?country=in&apiKey=93effb41f6634699a07d37b2f04501ea';
+    https.get(url,(resp)=>{
+        let rawData = '';
+        resp.on('data', (chunk) => { rawData += chunk; });
+        resp.on('end', () => {
+    try {
+      const parsedData = JSON.parse(rawData);
+      res.render('news',{articles:parsedData.articles});
+    } catch (e) {
+      console.error(e.message);
+    }
+  });
+    })
+    .on("error", (err) => {
+        console.log("Error: " + err.message);
+        res.send('<h1>404</h1>');
+      });
+})
+//finally exporting
 module.exports = router;
 
 
