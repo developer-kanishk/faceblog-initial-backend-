@@ -81,6 +81,7 @@ router.get("/delete/:id", (req, res) => {
       res.render('news',{articles:parsedData.articles});
     } catch (e) {
       console.error(e.message);
+      res.send('<h1>404</h1>');
     }
   });
     })
