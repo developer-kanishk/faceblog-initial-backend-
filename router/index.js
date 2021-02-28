@@ -70,8 +70,17 @@ router.get("/delete/:id", (req, res) => {
       .catch((err) => console.log(err));
   });
   //new api calling 
-  router.get('/news',(req,res)=>{
-    const url='https://newsapi.org/v2/top-headlines?country=in&apiKey=93effb41f6634699a07d37b2f04501ea';
+  router.get('/news/:type',(req,res)=>{
+    let choice = req.params.type;
+    let url;
+    if(choice==='Indian')
+    {
+      url='https://newsapi.org/v2/top-headlines?country=in&apiKey=93effb41f6634699a07d37b2f04501ea';
+    }
+    else 
+    {
+      url = 'https://newsapi.org/v2/everything?sources=the-washington-post&apiKey=93effb41f6634699a07d37b2f04501ea';
+    }
     https.get(url,(resp)=>{
         let rawData = '';
         resp.on('data', (chunk) => { rawData += chunk; });

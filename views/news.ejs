@@ -107,16 +107,12 @@
     <select name="news" id="news">
       <option value="Indian">Indian</option>
       <option value="World">World</option>
-      <option value="World">Mia malkova news</option>
     </select>
-    <button style="margin-top: 10px; font-size: 20px; " class="iWantUrCum">Click me harder and deeper </button>
+    <button style="margin-top: 10px; font-size: 20px; " class="iWantUrCum" id="selectButton" type="submit"> Get the news </button>
   </div>
   <% articles.forEach(function(article) { %>
     <div class="row">
-
-
-
-      <div class="leftcolumn">
+     <div class="leftcolumn">
         <div class="card">
           <h2>
             <%=article.title%>
@@ -136,6 +132,14 @@
     <% }); %>
 
       <%- include('./partials/footer'); %>
-</body>
 
+<script>
+  let myButton = document.getElementById('selectButton');
+  myButton.addEventListener('click',()=>{
+    let choice = 'http://localhost/news/'+news.value;
+    window.location.href=choice;
+})
+</script>
+
+</body>
 </html>
