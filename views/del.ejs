@@ -117,8 +117,9 @@
         </div>
             <!-- <button class="btn">Edit</button> -->
         <!-- <button class="btn">Delete</button> -->
-        
-        <a href=" /delete/<%= blog.id %>" class="btn btn-danger">Delete</a>
+        <%var add = '/delete/'+ blog._id %>
+        <button class="btn btn-primary" onclick="deleteButton(add)">delete</button>
+        <!-- <a href="/delete/<%= blog.id %>" class="btn btn-danger">Delete</a> -->
         <a href="/edit/<%= blog._id %>" class="btn btn-primary">Edit</a>
       </div>
     <% }); %>
@@ -130,5 +131,15 @@
     window.location.href="http://localhost/admin";
   });
 </script> -->
+<script>
+  function deleteButton(deleteRoute)
+  {
+    let answer = confirm('are you sure to delete');
+    if(answer===true)
+    {
+       window.location.href='http://localhost'+deleteRoute;
+    }
+  }
+</script>
 
 </html>

@@ -6,7 +6,7 @@ const blogSchema = new mongoose.Schema({
     dates:String,
     name:String,
     imgurl:String
-});
-const blog = mongoose.model('blog', blogSchema);
+});//object created from mogoose schema class
+const blog = new mongoose.model('blog', blogSchema);
 module.exports = blog;
 

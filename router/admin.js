@@ -9,18 +9,15 @@ router.get('/',(req,res)=>{
 });
 
 router.post('/',(req,res)=>{
-    let email = req.body.email;
-    let newEmail = email.toLowerCase();
-    const password = req.body.password;
-    if(newEmail==='kanishk1550@rediffmail.com' && password==='123456')
-    {
-      res.render('optionpage');
-    }
-    else
-    {
-        res.render('adminpage',{massage:'username/password doesnot match :('});
-    }
+    // let email = req.body.email;
+    // let newEmail = email.toLowerCase();
+    // const password = req.body.password;
+    res.redirect('/admin/menu');
 })
+//menu page
+router.get('/menu',(req,res)=>{
+    res.render('optionpage');
+});
 
 router.get('/admineditor',(req,res)=>{
     res.render('admineditor');
@@ -39,6 +36,7 @@ router.post('/admineditor',(req,res)=>{
         imgurl:imgurl,
         name:name
     });
+    
     blogPost.save()
     .then(() => {
         res.redirect('/');
@@ -48,7 +46,4 @@ router.post('/admineditor',(req,res)=>{
         res.send('<h2>unsuccessful</h2>');
       }); 
 })
-
-
-
 module.exports = router;
